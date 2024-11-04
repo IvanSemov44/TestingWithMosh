@@ -6,7 +6,7 @@ describe('ExpandableText', () => {
     const limit = 255;
     const longText = "a".repeat(limit + 1);
     const truncateText = longText.substring(0, limit) + "...";
-
+  
     it('should trancate text if long than 255 characters', () => {
         render(<ExpandableText text={longText} />)
 
