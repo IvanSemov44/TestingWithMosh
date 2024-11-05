@@ -11,7 +11,7 @@ describe('TagList', () => {
         // });
 
         const listItems = await screen.findAllByRole("listitem")
-        expect(listItems).toBeGreaterThan(0);
+        expect(listItems.length).toBeGreaterThan(0);
 
     })
 })
