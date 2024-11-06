@@ -13,7 +13,6 @@ const ProductDetail = ({ productId }: { productId: number }) => {
       setError("Invalid ProductId");
       return;
     }
-
     setLoading(true);
     fetch("/products/" + productId)
       .then((res) => res.json())
