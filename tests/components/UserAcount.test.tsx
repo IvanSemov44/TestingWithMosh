@@ -10,7 +10,7 @@ describe('UserAcount', () => {
         expect(screen.getByText(user.name)).toBeInTheDocument();
     });
 
-    it('should render edit button if use is admin', () => {
+    it('should render edit button if user is admin', () => {
         const user: User = { id: 343242, name: "Ivan", isAdmin: true, };
         render(<UserAccount user={user} />)
 

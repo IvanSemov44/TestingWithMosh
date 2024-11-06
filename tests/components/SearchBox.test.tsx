@@ -12,21 +12,21 @@ describe('SearchBox', () => {
             user: userEvent.setup(),
             onChange
         }
-    }
+    };
 
     it('should render an input field for searching', () => {
         const { input } = renderSearchBox();
 
         expect(input).toBeInTheDocument();
-    })
+    });
 
     it('should call onChange when enter is pressed', async () => {
         const { onChange, input, user } = renderSearchBox();
 
-        const searchTerm = "SearchTern";
+        const searchTerm = "SearchTerm";
         await user.type(input, searchTerm + "{enter}");
 
-        expect(onChange).toHaveBeenCalledWith(searchTerm)
+        expect(onChange).toHaveBeenCalledWith(searchTerm);
     });
 
     it('should not call onChange if input field is empty', async () => {
@@ -34,6 +34,6 @@ describe('SearchBox', () => {
 
         await user.type(input, "{enter}");
 
-        expect(onChange).not.toHaveBeenCalled
-    })
+        expect(onChange).not.toHaveBeenCalled();
+    });
 })

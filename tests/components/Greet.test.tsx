@@ -4,7 +4,7 @@ import Greet from "../../src/components/Greet";
 
 describe("Greet", () => {
   it("should render Hello with the name when name is provided", () => {
-    render(<Greet name="Ivan" />)
+    render(<Greet name="Ivan" />);
 
     const heading = screen.getByRole("heading");
     expect(heading).toBeInTheDocument();
@@ -12,7 +12,7 @@ describe("Greet", () => {
   });
 
   it("should render login button when name is not provided", () => {
-    render(<Greet  />)
+    render(<Greet  />);
 
     const button = screen.getByRole("button");
     expect(button).toBeInTheDocument();
