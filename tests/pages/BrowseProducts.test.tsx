@@ -6,6 +6,7 @@ import BrowseProducts from '../../src/pages/BrowseProductsPage'
 import { CartProvider } from '../../src/providers/CartProvider'
 import { db, getProductByCategory } from '../mocks/db'
 import { simulateDelay, simulateError } from '../utils'
+import AllProvider from '../AllProviders'
 
 describe('BrowseProducts', () => {
     const categories: Category[] = [];
@@ -134,13 +135,7 @@ describe('BrowseProducts', () => {
 });
 
 const renderComponent = () => {
-    render(
-        <CartProvider>
-            <Theme>
-                <BrowseProducts />
-            </Theme>
-        </CartProvider>
-    );
+    render(<BrowseProducts />, { wrapper: AllProvider });
 
     const getProductSkeloton = () => screen.queryByRole("progressbar", { name: /product/i });
 
