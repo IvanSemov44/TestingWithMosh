@@ -1,13 +1,12 @@
-import Onboarding from "../components/Onboarding";
-import OrderStatusSelector from "../components/OrderStatusSelector";
+import Onboarding from "../components/Onboarding"; 
+import BrowseProducts from "./BrowseProductsPage";
 
 
 const PlaygroundPage = () => {
   // return <Onboarding />;
 
   return (
-    <OrderStatusSelector onChange={console.log} />
-
+    <BrowseProducts />
   )
 };
 
