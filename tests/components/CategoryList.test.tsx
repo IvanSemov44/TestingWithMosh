@@ -1,7 +1,7 @@
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import CategoryList from '../../src/components/CategoryList';
 import { Category } from '../../src/entities';
-import ReduxProvider from '../../src/providers/ReduxProvider';
+import AllProvider from '../AllProviders';
 import { db } from '../mocks/db';
 import { simulateDelay, simulateError } from '../utils';
 
@@ -23,11 +23,7 @@ describe('CategoryList', () => {
     });
 
     const renderComponent = () => {
-        render(
-            <ReduxProvider>
-                <CategoryList />
-            </ReduxProvider>
-        );
+        render(<CategoryList />, { wrapper: AllProvider });
     };
 
     it('should render a list of categories', async () => {
